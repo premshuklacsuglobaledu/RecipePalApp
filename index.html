@@ -1,317 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RecipePal Android App</title>
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+<style>
+body{
+    margin:0;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f4f8f4;
+    color:#333;
+}
 
-    <title>RecipePal Android App</title>
+.hero{
+    background:linear-gradient(135deg,#4CAF50,#2E7D32);
+    color:white;
+    text-align:center;
+    padding:80px 20px;
+}
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+.hero h1{
+    font-size:64px;
+    margin:0;
+}
 
-        body {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            background: #f7faf8;
-            color: #1f2937;
-            line-height: 1.6;
-        }
+.hero p{
+    font-size:22px;
+    max-width:700px;
+    margin:20px auto;
+}
 
-        header {
-            min-height: 75vh;
-            padding: 80px 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            background: linear-gradient(135deg, #dff5e5, #fff0c7);
-        }
+.btn{
+    display:inline-block;
+    margin:15px;
+    padding:16px 30px;
+    border-radius:8px;
+    text-decoration:none;
+    font-size:18px;
+    font-weight:bold;
+}
 
-        header h1 {
-            margin: 10px 0;
-            font-size: clamp(48px, 9vw, 90px);
-        }
+.download{
+    background:white;
+    color:#2E7D32;
+}
 
-        header p {
-            max-width: 750px;
-            font-size: 20px;
-        }
+.github{
+    background:#222;
+    color:white;
+}
 
-        .project-label {
-            margin: 0;
-            font-size: 14px;
-            font-weight: bold;
-            letter-spacing: 2px;
-        }
+section{
+    max-width:1000px;
+    margin:auto;
+    padding:60px 20px;
+}
 
-        .buttons {
-            margin-top: 25px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-        }
+.features{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
 
-        .button {
-            display: inline-block;
-            padding: 15px 25px;
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: transform 0.2s;
-        }
+.card{
+    background:white;
+    border-radius:10px;
+    padding:25px;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
 
-        .button:hover {
-            transform: translateY(-3px);
-        }
+footer{
+    text-align:center;
+    padding:30px;
+    background:#222;
+    color:white;
+}
+</style>
 
-        .download-button {
-            background: #176b3a;
-            color: white;
-        }
-
-        .github-button {
-            background: white;
-            color: #176b3a;
-            border: 2px solid #176b3a;
-        }
-
-        .install-note {
-            margin-top: 20px;
-            font-size: 14px;
-            color: #4b5563;
-        }
-
-        main {
-            width: min(1100px, 92%);
-            margin: auto;
-        }
-
-        section {
-            padding: 60px 0;
-        }
-
-        h2 {
-            text-align: center;
-            font-size: 36px;
-        }
-
-        .about {
-            max-width: 800px;
-            margin: auto;
-            text-align: center;
-        }
-
-        .features {
-            display: grid;
-            grid-template-columns: repeat(
-                auto-fit,
-                minmax(220px, 1fr)
-            );
-            gap: 20px;
-        }
-
-        .feature-card {
-            padding: 25px;
-            background: white;
-            border-radius: 16px;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-        }
-
-        .technologies {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 12px;
-        }
-
-        .technologies span {
-            padding: 10px 17px;
-            background: white;
-            border-radius: 30px;
-            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
-        }
-
-        .download-section {
-            text-align: center;
-        }
-
-        footer {
-            margin-top: 40px;
-            padding: 35px 20px;
-            background: #17251d;
-            color: white;
-            text-align: center;
-        }
-
-        footer a {
-            color: #bbf7d0;
-        }
-
-        @media (max-width: 600px) {
-            header {
-                min-height: auto;
-                padding: 70px 20px;
-            }
-
-            .buttons {
-                width: 100%;
-                flex-direction: column;
-            }
-
-            .button {
-                width: 100%;
-            }
-        }
-    </style>
 </head>
 
 <body>
 
-<header>
-    <p class="project-label">
-        ANDROID PORTFOLIO PROJECT
-    </p>
+<div class="hero">
 
-    <h1>🍽️ RecipePal</h1>
+<h1>🍽 RecipePal</h1>
 
-    <p>
-        A recipe recommendation app that helps users discover
-        meals based on dietary preferences, ingredients, and
-        cuisines from around the world.
-    </p>
+<p>
+Discover recipes based on your dietary preferences with a modern Android application built using Kotlin and Jetpack Compose.
+</p>
 
-    <div class="buttons">
+<a class="btn download"
+href="https://raw.githubusercontent.com/premshuklacsuglobaledu/RecipePalApp/main/app-release.apk">
+⬇ Download APK
+</a>
 
-        <!-- This works because app-release.apk is in the same folder -->
-        <a
-            class="button download-button"
-            href="./app-release.apk"
-            download="RecipePal.apk"
-        >
-            ⬇ Download RecipePal APK
-        </a>
+<a class="btn github"
+href="https://github.com/premshuklacsuglobaledu/RecipePalApp"
+target="_blank">
+GitHub Repository
+</a>
 
-        <a
-            class="button github-button"
-            href="https://github.com/premshuklacsuglobaledu/RecipePalApp"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-            View Source Code
-        </a>
+</div>
 
-    </div>
+<section>
 
-    <p class="install-note">
-        Download on an Android device. Android may ask you to
-        allow installation from your browser or file manager.
-    </p>
-</header>
+<h2>About RecipePal</h2>
 
-<main>
+<p>
+RecipePal helps users discover recipes from around the world. Browse recipes based on vegetarian, vegan, pescetarian, heritage, and many other dietary preferences.
+</p>
 
-    <section>
-        <h2>About RecipePal</h2>
+</section>
 
-        <p class="about">
-            RecipePal is a native Android application developed
-            with Kotlin and Jetpack Compose. Users can choose a
-            dietary preference, search recipes, save favorites,
-            and view ingredients and cooking instructions.
-        </p>
-    </section>
+<section>
 
-    <section>
-        <h2>Features</h2>
+<h2>Features</h2>
 
-        <div class="features">
+<div class="features">
 
-            <article class="feature-card">
-                <h3>🥗 Diet Filtering</h3>
-                <p>
-                    Browse vegetarian, vegan, pescetarian,
-                    kosher, heritage, and other recipe categories.
-                </p>
-            </article>
+<div class="card">
+<h3>🥗 Diet Preferences</h3>
+<p>Select from multiple dietary lifestyles.</p>
+</div>
 
-            <article class="feature-card">
-                <h3>🔍 Recipe Search</h3>
-                <p>
-                    Search by recipe name, country, dietary
-                    category, description, or ingredient.
-                </p>
-            </article>
+<div class="card">
+<h3>🔍 Recipe Search</h3>
+<p>Quickly search for recipes and ingredients.</p>
+</div>
 
-            <article class="feature-card">
-                <h3>❤️ Favorites</h3>
-                <p>
-                    Save favorite recipes and access them from
-                    the Favorites screen.
-                </p>
-            </article>
+<div class="card">
+<h3>❤️ Favorites</h3>
+<p>Save recipes you enjoy for later.</p>
+</div>
 
-            <article class="feature-card">
-                <h3>📖 Recipe Details</h3>
-                <p>
-                    View ingredients, instructions, preparation
-                    time, cooking time, servings, and allergens.
-                </p>
-            </article>
+<div class="card">
+<h3>📖 Recipe Details</h3>
+<p>Ingredients, instructions, calories, prep time, allergens, and more.</p>
+</div>
 
-        </div>
-    </section>
+</div>
 
-    <section>
-        <h2>Built With</h2>
+</section>
 
-        <div class="technologies">
-            <span>Kotlin</span>
-            <span>Jetpack Compose</span>
-            <span>Material 3</span>
-            <span>MVVM</span>
-            <span>StateFlow</span>
-            <span>Android Studio</span>
-        </div>
-    </section>
+<section style="text-align:center">
 
-    <section class="download-section">
-        <h2>Try RecipePal</h2>
+<h2>Download RecipePal</h2>
 
-        <p>
-            Download and install RecipePal on an Android phone.
-        </p>
+<p>Install the latest Android version.</p>
 
-        <a
-            class="button download-button"
-            href="./app-release.apk"
-            download="RecipePal.apk"
-        >
-            ⬇ Download APK
-        </a>
-    </section>
+<a class="btn download"
+href="https://raw.githubusercontent.com/premshuklacsuglobaledu/RecipePalApp/main/app-release.apk">
+⬇ Download APK
+</a>
 
-</main>
+</section>
 
 <footer>
-    <p>Developed by Prem Shukla</p>
 
-    <p>
-        <a
-            href="https://github.com/premshuklacsuglobaledu/RecipePalApp"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-            GitHub Repository
-        </a>
-    </p>
+<p><strong>Developed by Prem Shukla</strong></p>
+
+<p>CSU Global University</p>
+
 </footer>
 
 </body>
