@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
 
@@ -9,42 +8,199 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <meta
-        name="description"
-        content="RecipePal Android recipe recommendation application"
-    >
-
     <title>RecipePal Android App</title>
 
-    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f7faf8;
+            color: #1f2937;
+            line-height: 1.6;
+        }
+
+        header {
+            min-height: 75vh;
+            padding: 80px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(135deg, #dff5e5, #fff0c7);
+        }
+
+        header h1 {
+            margin: 10px 0;
+            font-size: clamp(48px, 9vw, 90px);
+        }
+
+        header p {
+            max-width: 750px;
+            font-size: 20px;
+        }
+
+        .project-label {
+            margin: 0;
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .buttons {
+            margin-top: 25px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 15px 25px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.2s;
+        }
+
+        .button:hover {
+            transform: translateY(-3px);
+        }
+
+        .download-button {
+            background: #176b3a;
+            color: white;
+        }
+
+        .github-button {
+            background: white;
+            color: #176b3a;
+            border: 2px solid #176b3a;
+        }
+
+        .install-note {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #4b5563;
+        }
+
+        main {
+            width: min(1100px, 92%);
+            margin: auto;
+        }
+
+        section {
+            padding: 60px 0;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 36px;
+        }
+
+        .about {
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(
+                auto-fit,
+                minmax(220px, 1fr)
+            );
+            gap: 20px;
+        }
+
+        .feature-card {
+            padding: 25px;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .technologies {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .technologies span {
+            padding: 10px 17px;
+            background: white;
+            border-radius: 30px;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+        }
+
+        .download-section {
+            text-align: center;
+        }
+
+        footer {
+            margin-top: 40px;
+            padding: 35px 20px;
+            background: #17251d;
+            color: white;
+            text-align: center;
+        }
+
+        footer a {
+            color: #bbf7d0;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                min-height: auto;
+                padding: 70px 20px;
+            }
+
+            .buttons {
+                width: 100%;
+                flex-direction: column;
+            }
+
+            .button {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<header class="hero">
-
-    <p class="small-title">
+<header>
+    <p class="project-label">
         ANDROID PORTFOLIO PROJECT
     </p>
 
     <h1>🍽️ RecipePal</h1>
 
-    <p class="subtitle">
-        Discover recipes based on dietary preferences,
-        ingredients, and cuisines from around the world.
+    <p>
+        A recipe recommendation app that helps users discover
+        meals based on dietary preferences, ingredients, and
+        cuisines from around the world.
     </p>
 
     <div class="buttons">
 
+        <!-- This works because app-release.apk is in the same folder -->
         <a
-            class="button primary"
-            href="https://github.com/premshuklacsuglobaledu/RecipePalApp/releases/latest/download/RecipePal.apk"
+            class="button download-button"
+            href="./app-release.apk"
+            download="RecipePal.apk"
         >
-            Download APK
+            ⬇ Download RecipePal APK
         </a>
 
         <a
-            class="button secondary"
+            class="button github-button"
             href="https://github.com/premshuklacsuglobaledu/RecipePalApp"
             target="_blank"
             rel="noopener noreferrer"
@@ -54,141 +210,66 @@
 
     </div>
 
-    <p class="warning">
-        Download the APK on an Android device. Android may ask you
-        to allow installation from your browser or file manager.
+    <p class="install-note">
+        Download on an Android device. Android may ask you to
+        allow installation from your browser or file manager.
     </p>
-
 </header>
 
 <main>
 
     <section>
-
         <h2>About RecipePal</h2>
 
-        <p class="center-text">
-            RecipePal is a native Android recipe recommendation app
-            developed with Kotlin and Jetpack Compose. Users can select
-            dietary preferences, search recipes, save favorites, and
-            view ingredients and cooking instructions.
+        <p class="about">
+            RecipePal is a native Android application developed
+            with Kotlin and Jetpack Compose. Users can choose a
+            dietary preference, search recipes, save favorites,
+            and view ingredients and cooking instructions.
         </p>
-
     </section>
 
     <section>
-
         <h2>Features</h2>
 
         <div class="features">
 
-            <article>
+            <article class="feature-card">
                 <h3>🥗 Diet Filtering</h3>
-
                 <p>
-                    Find recipes based on vegetarian, vegan,
-                    pescetarian, kosher, heritage, and other preferences.
+                    Browse vegetarian, vegan, pescetarian,
+                    kosher, heritage, and other recipe categories.
                 </p>
             </article>
 
-            <article>
+            <article class="feature-card">
                 <h3>🔍 Recipe Search</h3>
-
                 <p>
-                    Search recipes by name, country,
-                    dietary category, or ingredient.
+                    Search by recipe name, country, dietary
+                    category, description, or ingredient.
                 </p>
             </article>
 
-            <article>
+            <article class="feature-card">
                 <h3>❤️ Favorites</h3>
-
                 <p>
-                    Save preferred recipes and quickly access them
-                    from the Favorites screen.
+                    Save favorite recipes and access them from
+                    the Favorites screen.
                 </p>
             </article>
 
-            <article>
+            <article class="feature-card">
                 <h3>📖 Recipe Details</h3>
-
                 <p>
-                    View ingredients, cooking steps, preparation time,
-                    servings, calories, and allergen information.
+                    View ingredients, instructions, preparation
+                    time, cooking time, servings, and allergens.
                 </p>
             </article>
 
         </div>
-
     </section>
 
     <section>
-
-        <h2>App Screenshots</h2>
-
-        <div class="screenshots">
-
-            <figure>
-                <img
-                    src="images/welcome.png"
-                    alt="RecipePal welcome screen"
-                >
-
-                <figcaption>
-                    Welcome Screen
-                </figcaption>
-            </figure>
-
-            <figure>
-                <img
-                    src="images/diet.png"
-                    alt="RecipePal diet selection screen"
-                >
-
-                <figcaption>
-                    Diet Selection
-                </figcaption>
-            </figure>
-
-            <figure>
-                <img
-                    src="images/home.png"
-                    alt="RecipePal home screen"
-                >
-
-                <figcaption>
-                    Recipe Recommendations
-                </figcaption>
-            </figure>
-
-            <figure>
-                <img
-                    src="images/details.png"
-                    alt="RecipePal recipe detail screen"
-                >
-
-                <figcaption>
-                    Recipe Details
-                </figcaption>
-            </figure>
-
-            <figure>
-                <img
-                    src="images/favorites.png"
-                    alt="RecipePal favorites screen"
-                >
-
-                <figcaption>
-                    Favorites
-                </figcaption>
-            </figure>
-
-        </div>
-
-    </section>
-
-    <section>
-
         <h2>Built With</h2>
 
         <div class="technologies">
@@ -199,33 +280,28 @@
             <span>StateFlow</span>
             <span>Android Studio</span>
         </div>
-
     </section>
 
     <section class="download-section">
-
         <h2>Try RecipePal</h2>
 
         <p>
-            Download the latest version of RecipePal for Android.
+            Download and install RecipePal on an Android phone.
         </p>
 
         <a
-            class="button primary"
-            href="https://github.com/premshuklacsuglobaledu/RecipePalApp/releases/latest/download/RecipePal.apk"
+            class="button download-button"
+            href="./app-release.apk"
+            download="RecipePal.apk"
         >
-            Download RecipePal APK
+            ⬇ Download APK
         </a>
-
     </section>
 
 </main>
 
 <footer>
-
-    <p>
-        Developed by Prem Shukla
-    </p>
+    <p>Developed by Prem Shukla</p>
 
     <p>
         <a
@@ -233,10 +309,9 @@
             target="_blank"
             rel="noopener noreferrer"
         >
-            View RecipePal on GitHub
+            GitHub Repository
         </a>
     </p>
-
 </footer>
 
 </body>
